@@ -8,7 +8,7 @@ public class Menu
         while (true)
         {
             Console.Clear();  // Rensar skärmen så det ser proffsigt ut
-            Console.WriteLine("=== Henriks HobbyLager™ 1.0 ===");
+            Console.WriteLine("=== Henriks HobbyLager™ 2.0 ===");
             Console.WriteLine("1. Visa alla produkter");
             Console.WriteLine("2. Lägg till produkt");
             Console.WriteLine("3. Uppdatera produkt");

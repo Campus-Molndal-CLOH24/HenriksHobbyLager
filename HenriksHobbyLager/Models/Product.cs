@@ -10,10 +10,5 @@ public class Product
     public DateTime Created { get; set; }
     public DateTime? LastUpdated { get; set; }  // it means the property can hold a null value. 
 }
-//add more categories tabellet
-public class Category
- {
-    public int Id { get; set; }
-    public string Name { get; set; }
- }
+
 

@@ -8,7 +8,9 @@ namespace RefactoringExercise
     class Program
     {
 
-
+        using var connection = new SqliteConnection("Data Source=HobbyLager.db");
+        connection.Open();
+        Console.WriteLine("SQLite connection successful!");
         /*
         // Min fantastiska databas! Fungerar perfekt så länge datorn är igång
         private static List<Product> _products = new List<Product>();
@@ -18,7 +20,7 @@ namespace RefactoringExercise
 
         
         */
-        }
+     }
         
 
         
