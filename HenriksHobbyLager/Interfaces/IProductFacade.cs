@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using HenriksHobbyLager.Models;
 
 public interface IProductFacade
 {
