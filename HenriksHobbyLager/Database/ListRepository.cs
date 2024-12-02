@@ -141,9 +141,9 @@ internal class ListRepository : IListRepository
             DisplayProduct(product);
     }
 
-    private bool MakeLowerCaseCategory(Product p, string? searchTerm) => (p.Category ?? "").Contains(searchTerm ?? "", StringComparison.CurrentCultureIgnoreCase);
+    private static bool MakeLowerCaseCategory(Product p, string? searchTerm) => (p.Category ?? "").Contains(searchTerm ?? "", StringComparison.CurrentCultureIgnoreCase);
 
-    private bool MakeLowerCaseName(Product p, string? searchTerm) => (p.Name ?? "").Contains(searchTerm ?? "", StringComparison.OrdinalIgnoreCase);
+    private static bool MakeLowerCaseName(Product p, string? searchTerm) => (p.Name ?? "").Contains(searchTerm ?? "", StringComparison.OrdinalIgnoreCase);
 
     public void DisplayProduct(Product product)
     {

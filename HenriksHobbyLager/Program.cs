@@ -7,13 +7,11 @@ internal static class Program
 {
     public static void Main()
     {
-        HobbyLager lager = new();
-
         // Fejkad Dependency Injection 😇,
         // egentligen Inversion of Control
-        IListRepository repository = new ListRepository();
-        lager.Start(repository);
+        IListRepository repository = new FakeRepository();
+        HobbyLager.Start(repository);
 
-        // TODO: Skapa en Dependency Injection container
+        // TODO: Skapa en Dependency Injection container (Autofac kanske)
     }
 }

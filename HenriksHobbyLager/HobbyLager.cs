@@ -1,21 +1,11 @@
 ﻿namespace HenriksHobbyLager;
 
-using HenriksHobbyLager.Database;
 using HenriksHobbyLager.Interfaces;
-using HenriksHobbyLager.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-internal class HobbyLager
+internal static class HobbyLager
 {
-    private readonly List<Product> _products = [];
-
-    private int _nextId = 1;
-
-    public void Start(IListRepository list)
+    public static void Start(IListRepository list)
     {
         while (true)
         {
@@ -58,5 +48,4 @@ internal class HobbyLager
             _ = Console.ReadKey();
         }
     }
-
 }
