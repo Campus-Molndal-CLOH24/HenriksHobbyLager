@@ -1,8 +1,8 @@
 # Backlog eller tl;dr av kravspec
 
-### Backlog för Uppgradering till **Henriks HobbyLager™ 2.0**
+## Backlog för Uppgradering till **Henriks HobbyLager™ 2.0**
 
-#### **Backlog-struktur:**
+### **Backlog-struktur:**
 
 1. **Epics**: Huvudmål eller större uppgifter
 2. **Features**: Specifika funktioner att implementera inom varje epic
@@ -10,7 +10,7 @@
 
 ---
 
-### **Epic 1: Kodstädning och SOLID-implementering**
+## **Epic 1: Kodstädning och SOLID-implementering**
 
 - **Feature 1.1**: Analysera och refaktorisera befintlig kod
 
@@ -39,7 +39,7 @@
 
 ---
 
-### **Epic 2: Persistent Lagring med SQLite**
+## **Epic 2: Persistent Lagring med SQLite**
 
 - **Feature 2.1**: Sätt upp SQLite-databas
 
@@ -60,7 +60,7 @@
 
 ---
 
-### **Epic 3: Konsolapplikationens struktur**
+## **Epic 3: Konsolapplikationens struktur**
 
 - **Feature 3.1**: Strukturera konsolgränssnittet
 
@@ -75,7 +75,7 @@
 
 ---
 
-### **Epic 4: Testning och Validering**
+## **Epic 4: Testning och Validering**
 
 - **Feature 4.1**: Manuella tester
   - **Task 4.1.1**: Utför testscenariot "Strömavbrott-testet"
@@ -84,7 +84,7 @@
 
 ---
 
-### **Epic 5: Dokumentation**
+## **Epic 5: Dokumentation**
 
 - **Feature 5.1**: Uppdatera README.md
 
@@ -98,7 +98,7 @@
 
 ---
 
-### **Epic 6: Presentation och Inlämning**
+## **Epic 6: Presentation och Inlämning**
 
 - **Feature 6.1**: Förbered presentation
 
@@ -113,7 +113,7 @@
 
 ---
 
-### Tidsuppskattning för Backlog:
+## Tidsuppskattning för Backlog:
 
 - **Dag 1-2**: Epic 1 (Kodstädning & SOLID)
 - **Dag 3-4**: Epic 2 (Persistent Lagring)
