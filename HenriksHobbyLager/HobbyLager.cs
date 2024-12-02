@@ -1,6 +1,7 @@
 ﻿namespace HenriksHobbyLager;
 
 using HenriksHobbyLager.Database;
+using HenriksHobbyLager.Interfaces;
 using HenriksHobbyLager.Models;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,8 @@ internal class HobbyLager
 
     private int _nextId = 1;
 
-    public void Start()
+    public void Start(IListRepository list)
     {
-        ListRepository list = new();
         while (true)
         {
             Console.Clear();

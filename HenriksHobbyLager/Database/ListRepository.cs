@@ -1,13 +1,12 @@
 ﻿namespace HenriksHobbyLager.Database;
 
+using HenriksHobbyLager.Interfaces;
 using HenriksHobbyLager.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-internal class ListRepository
+internal class ListRepository : IListRepository
 {
     private readonly List<Product> _products = [];
 
@@ -158,5 +157,4 @@ internal class ListRepository
             Console.WriteLine($"Senast uppdaterad: {product.LastUpdated}");
         Console.WriteLine(new string('-', 40));
     }
-
 }

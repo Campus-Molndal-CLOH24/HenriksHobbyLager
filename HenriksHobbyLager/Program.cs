@@ -1,15 +1,19 @@
 ﻿namespace HenriksHobbyLager;
 
-using HenriksHobbyLager.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using HenriksHobbyLager.Database;
+using HenriksHobbyLager.Interfaces;
 
 internal static class Program
 {
     public static void Main()
     {
         HobbyLager lager = new();
-        lager.Start();
+
+        // Fejkad Dependency Injection 😇,
+        // egentligen Inversion of Control
+        IListRepository repository = new ListRepository();
+        lager.Start(repository);
+
+        // TODO: Skapa en Dependency Injection container
     }
 }
