@@ -1,5 +1,6 @@
 # Marcus notes
 
-Allmän refactory för att slippa framtida buggar innan jag börjar dela upp koden.
+# Refactoring stage
 
-Snyggade upp koden rent allmänt.
+AllmÃ¤n refactory fÃ¶r att slippa framtida buggar innan jag bÃ¶rjar dela upp koden.  
+Snyggade upp koden rent allmÃ¤nt.
