@@ -1,86 +1,10 @@
-﻿/*
-testdata:
-var anka = new Product
+﻿namespace HenriksHobbyLager
 {
-    Name = "Gummianka",
-    Price = 10,
-    Stock = 10,
-    Category = "programmering"
-};
-*/
-
-/*
-    HENRIKS HOBBYLAGER™ 1.0
-    Skapat av: Henrik Hobbykodare
-    Datum: En sen kväll i oktober efter fyra Red Bull
-    Version: 1.0 (eller kanske 1.1, jag har ändrat lite sen första versionen)
-
-    TODO-lista:
-    * Kolla vad interfaces egentligen gör
-    * Fixa så att datan inte försvinner när datorn stängs av
-    * Lägga till stöd för bilder på produkterna (kanske)
-    * Göra backups (förlorade nästan allt förra veckan när skärmsläckaren startade)
-    * Kolla upp det där med "molnet" som alla pratar om
-    * Snygga till koden (när jag har tid)
-    * Lägg till ljudeffekter när man lägger till produkter???
-    * Fixa så att programmet startar automatiskt när datorn startar om
-    * Be någon förklara vad "dependency injection" betyder
-    * Köpa en UPS (strömavbrott är INTE kul!)
-    * Lära mig vad XML är (folk säger att det är viktigt)
-    * Göra en logga till programmet i Paint
-    
-    VIKTIGT: Stäng inte av datorn! All data ligger i minnet!
-    
-    PS. Om någon hittar det här i framtiden: Jag vet att koden kunde varit snyggare, 
-    men den fungerar! Och det är huvudsaken... right?
-*/
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace RefactoringExercise
-{
-    // Interfaces som jag kopierade från Stack Overflow. 
-    // Ingen aning om vad de gör men folk säger att de är bra att ha!
-    // TODO: Kolla upp vad interface betyder... 
-    public interface IRepository<T>
-    {
-        IEnumerable<T> GetAll();
-        T GetById(int id);
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(int id);
-        IEnumerable<T> Search(Func<T, bool> predicate);
-    }
-
-    public interface IProductFacade
-    {
-        IEnumerable<Product> GetAllProducts();
-        Product GetProduct(int id);
-        void CreateProduct(Product product);
-        void UpdateProduct(Product product);
-        void DeleteProduct(int id);
-        IEnumerable<Product> SearchProducts(string searchTerm);
-    }
-
-    // Min fina produktklass! 
-    // Lade till Created och LastUpdated för att det såg proffsigt ut
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int Stock { get; set; }
-        public string Category { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime? LastUpdated { get; set; }  // Frågetecknet är för att jag är osäker på datumet
-    }
-
     class Program
     {
         // Min fantastiska databas! Fungerar perfekt så länge datorn är igång
         private static List<Product> _products = new List<Product>();
-        
+
         // Räknare för ID. Börjar på 1 för att 0 känns så negativt
         private static int _nextId = 1;
 
@@ -97,7 +21,7 @@ namespace RefactoringExercise
                 Console.WriteLine("4. Ta bort produkt");
                 Console.WriteLine("5. Sök produkter");
                 Console.WriteLine("6. Avsluta");  // Använd inte denna om du vill behålla datan!
-                
+
                 var choice = Console.ReadLine();
 
                 // Switch är tydligen bättre än if-else enligt Google
@@ -151,24 +75,24 @@ namespace RefactoringExercise
         private static void AddProduct()
         {
             Console.WriteLine("=== Lägg till ny produkt ===");
-            
+
             Console.Write("Namn: ");
             var name = Console.ReadLine();
-            
+
             Console.Write("Pris: ");
             if (!decimal.TryParse(Console.ReadLine(), out decimal price))
             {
                 Console.WriteLine("Ogiltigt pris! Använd punkt istället för komma (lärde mig den hårda vägen)");
                 return;
             }
-            
+
             Console.Write("Antal i lager: ");
             if (!int.TryParse(Console.ReadLine(), out int stock))
             {
                 Console.WriteLine("Ogiltig lagermängd! Hela tal endast (kan inte sälja halva helikoptrar)");
                 return;
             }
-            
+
             Console.Write("Kategori: ");
             var category = Console.ReadLine();
 
@@ -258,8 +182,8 @@ namespace RefactoringExercise
             var searchTerm = Console.ReadLine().ToLower();
 
             // LINQ igen! Kollar både namn och kategori
-            var results = _products.Where(p => 
-                p.Name.ToLower().Contains(searchTerm) || 
+            var results = _products.Where(p =>
+                p.Name.ToLower().Contains(searchTerm) ||
                 p.Category.ToLower().Contains(searchTerm)
             ).ToList();
 
