@@ -7,8 +7,8 @@
 
 ## Kodare
 
-- 
-- 
-- 
+- Avinash chowdary Bodduluri
+- Maria schillström
+- Mohammad amir
 - 
 - 
